@@ -40,6 +40,10 @@ export function updateUser(id, data) {
     return axios.put(`/${id}`, data );
 };
 
+export function updatePassword(id, data) {
+    return axios.put(`/${id}/password`, data );
+};
+
 export function addAvatar(id, file) {
     return axios.post(`/avatar/${id}`, file)
 }

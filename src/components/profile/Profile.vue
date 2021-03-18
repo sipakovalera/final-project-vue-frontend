@@ -83,7 +83,7 @@
                 <button 
                   class="edit" 
                   type="button" 
-                  @click="updatePassword(user.id, newPassword)"
+                  @click="updatedPassword(user.id, newPassword)"
                 >Change</button>
           </div>
          </div>
@@ -102,7 +102,7 @@
 </template>
 
 <script>
-import { addAvatar, currentUser, updateUser, deleteUser, getFriends } from '../../services/api';
+import { addAvatar, currentUser, updateUser, deleteUser, getFriends, updatePassword } from '../../services/api';
 import { mapActions, mapGetters } from 'vuex';
 import UserFriends from './UserFriends.vue'
 
@@ -171,9 +171,9 @@ export default {
         alert("This field must be a valid email")
       }
     }, 
-    async updatePassword(id, data){
+    async updatedPassword(id, data){
       try{
-        await updateUser(id, {password: data});
+        await updatePassword(id, {password: data});
         alert(`You changed password`)
         this.newPassword = "";
       }
