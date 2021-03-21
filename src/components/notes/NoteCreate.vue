@@ -55,41 +55,41 @@ export default {
 </script>
 
 <style scoped>
-.note-create {
-  margin: 100px 0;
-}
-form {
-  padding: 80px;
-  box-shadow: 2px 1px 5px 0px rgba(34, 60, 80, 0.2);
-  border-radius: 5px;
-  background-color: #f3e7c7;
-}
-input,
-select {
-  margin: 5px;
-  padding: 3px;
-  max-width: 250px;
-  border-radius: 5px;
-  box-shadow: 2px 1px 5px 0px rgba(34, 60, 80, 0.2);
-  border: none;
-}
-button {
-  padding: 4px 20px;
-  width: 175px;
-  border-radius: 5px;
-  box-shadow: 2px 1px 5px 0px rgba(34, 60, 80, 0.2);
-  background-color: #e7e1d0;
-  margin: 10px 5px;
-  border: none;
-  cursor: pointer;
-  transition: 0.5s ease;
-}
-button:hover{
-  background: #feae51;
-  transition: all 0.5s ease;
-  color: #fff;
-}
-.add-btn{
-  text-transform: uppercase;
-}
+  .note-create {
+    margin: 100px 0;
+  }
+  form {
+    padding: 80px;
+    box-shadow: 2px 1px 5px 0px rgba(34, 60, 80, 0.2);
+    border-radius: 5px;
+    background-color: #fff;
+  }
+  input,
+  select {
+    margin: 5px;
+    padding: 3px;
+    max-width: 250px;
+    border-radius: 5px;
+    box-shadow: 2px 1px 5px 0px rgba(34, 60, 80, 0.2);
+    border: none;
+  }
+  button {
+    padding: 4px 20px;
+    width: 175px;
+    border-radius: 5px;
+    box-shadow: 2px 1px 5px 0px rgba(34, 60, 80, 0.2);
+    background-color: #fead516c;
+    margin: 10px 5px;
+    border: none;
+    color: #fff;
+    cursor: pointer;
+    transition: 0.5s ease;
+  }
+  button:hover{
+    background: #feae51;
+    transition: all 0.5s ease;
+  }
+  .add-btn{
+    text-transform: uppercase;
+  }
 </style>

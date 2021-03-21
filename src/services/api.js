@@ -1,15 +1,15 @@
 import axios from 'axios';
 
 export function getUsers(page, limit) {
-    return axios.get('/', { params: { page, limit} });
+    return axios.get('/', { params: { page, limit } });
 };
 
 export function sortUsers(page, limit, sortBy) {
-    return axios.get('/', {params: {page, limit, sortBy}})
+    return axios.get('/', { params: {page, limit, sortBy } })
 }
 
 export function selectAvatar(page, limit, filter) {
-    return axios.get('/', {params: {page, limit, filter}})
+    return axios.get('/', { params: { page, limit, filter } })
 }
 
 export function getFriends(id) {

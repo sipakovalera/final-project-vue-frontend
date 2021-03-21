@@ -30,30 +30,30 @@ export default {
   computed: {
     ...mapGetters("notes", ["notesList"])
   }
-};
+}
 </script>
 
 <style scoped>
-button {
-  display: block;
-  margin: auto;
-}
-ul {
-  list-style: none;
-  max-width: 100%;
-  padding: 0;
-  width: 40%;
-}
-.note-container {
-  display: flex;
-  width: 100%;
-  justify-content: space-evenly;
-  padding: 50px 0;
-}
-.empty-list {
-  font-size: 20px;
-  font-weight: 700;
-  color: rgba(74, 44, 20, 0.667);
-  margin: 150px 0;
-}
+  button {
+    display: block;
+    margin: auto;
+  }
+  ul {
+    list-style: none;
+    max-width: 100%;
+    padding: 0;
+    width: 40%;
+  }
+  .note-container {
+    display: flex;
+    width: 100%;
+    justify-content: space-evenly;
+    padding: 50px 0;
+  }
+  .empty-list {
+    font-size: 20px;
+    font-weight: 700;
+    color: rgba(74, 44, 20, 0.667);
+    margin: 150px 0;
+  }
 </style>

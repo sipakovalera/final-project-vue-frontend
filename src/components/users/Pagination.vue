@@ -28,15 +28,15 @@ export default {
   },
   name: "pagination",
   methods: {
-    async changePage(pageNumber){
+    async changePage(pageNumber) {
       this.currentPage = pageNumber,
       this.$emit('change-page', pageNumber)
     },
-    prevPage(){
+    prevPage() {
       this.currentPage = this.currentPage - 1
       this.$emit('change-page', this.currentPage)
     },
-    nextPage(){
+    nextPage() {
       this.currentPage = this.currentPage + 1
       this.$emit('change-page', this.currentPage)
     }
@@ -45,19 +45,19 @@ export default {
 </script>
 
 <style scoped>
-  ul{
+  ul {
     display: flex;
     justify-content: center;
   }
-  li{
+  li {
     list-style-type: none;
     padding: 5px;
   }
-  .paginate-container{
+  .paginate-container {
     display: flex;
     justify-content: space-around;
   }
-  .paginate-page{
+  .paginate-page {
     color: brown;
     width: 30px;
     height: 30px;
@@ -70,16 +70,16 @@ export default {
     transition: 0.5s ease;
     border: none;
   }
-  .btn-group{
+  .btn-group {
     background: transparent;
     border: none;
     color: #ccc;
     cursor: pointer;
   }
-  .btn-group:hover{
+  .btn-group:hover {
     color: #79a1d3;
   }
-  .active{
+  .active {
     background: #79a1d3;
     box-shadow: 3px 2px 5px 0px rgba(34, 60, 80, 0.2);
     transition: all 0.5 ease;

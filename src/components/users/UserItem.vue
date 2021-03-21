@@ -30,28 +30,28 @@ export default {
     avatar: String
   },
   "name": "user-item",
-  data(){
+  data() {
     return {
       friendship: false
     }
   },
   methods: {
-   async addUser(id){
-      try{
+    async addUser(id){
+      try {
         const currentUser = Number(localStorage.getItem('id'));
         this.friendship = true;
         return await addFriend(currentUser, {userId: currentUser, friendId: id})
       }
-      catch{
+      catch {
         console.log('error addUser')
       }
     }
   },
-  }
+}
 </script>
 
 <style scoped>
-  .user-item{
+  .user-item {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -60,38 +60,38 @@ export default {
     background: #fff;
     border-radius: 5px;
   }
-  .user-item-main{
+  .user-item-main {
     display: flex;
     align-items: center;
     width: 70%;
   }
-  .user-container{
+  .user-container {
     border-radius: 5px;
     box-shadow: 2px 1px 5px 0px rgba(34, 60, 80, 0.2);
     margin: 10px 0;
   }
-  .user-title{
+  .user-title {
     font-size: 18px;
     font-weight: 600;
     color: #3b4a47;
   }
-  .user-avatar{
+  .user-avatar {
     width: 100px;
     height: 100px;
     border-radius: 5px;
     box-shadow: 2px 1px 5px 0px rgba(34, 60, 80, 0.2);
     background-color: rgba(204, 204, 204, 0.32);
-    overflow: hidden;
+    text-align: center;
   }
   img{
-    height: 130px;
-    width: auto;
+    width: 100%;
+    height: 100px;
   }
-  .user-information{
+  .user-information {
     text-align: start;
     margin: 0 10px;
   }
-  button{
+  button {
     padding: 10px 15px;
     border-radius: 5px;
     border: none;
@@ -101,28 +101,28 @@ export default {
     opacity: .6;
     transition: 0.5s ease;
   }
-  button.send-btn:hover{
+  button.send-btn:hover {
     background-color: rgb(167, 213, 4);
     color: #fff;
     opacity: 0.8;
   }
 
-   button.add-btn:hover{
+   button.add-btn:hover {
     background-color: #feae51;
     color: #fff;
     opacity: 0.8;
   }
 
-  button.added-btn{
+  button.added-btn {
     background-color: rgb(167, 213, 4);
     opacity: 0.8;
     color: #fff;
   }
-  .users-btn button{
+  .users-btn button {
     width: 120px;
     margin: 5px 0;
   }
-  .users-btn{
+  .users-btn {
     width: 30%;
   }
 </style>

@@ -15,7 +15,7 @@ span {
 }
 .home {
   text-align: center;
-  margin: 100px 0;
+  padding: 130px 0 320px 0;
 }
 .join a {
   text-decoration: none;
@@ -26,7 +26,7 @@ span {
   margin: 10px 0;
 }
 a:hover {
-  font-size: 25px;
   transition: all 0.5s ease;
+  color: #feae51;
 }
 </style>

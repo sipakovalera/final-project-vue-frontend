@@ -3,11 +3,10 @@ import axios from "axios";
 export default {
   async register({ commit }, user) {
     const response = await axios.post('/register', user)
-    alert('You are registered, login')
     commit('register', response);
   },
-  async login({ commit }, {login, password}) {
-    const response = await axios.post('/login', {login, password})
+  async login({ commit }, { login, password }) {
+    const response = await axios.post('/login', { login, password })
     if(response.data.token){
       const token = await response.data.token;
       const id = await response.data.user.id;

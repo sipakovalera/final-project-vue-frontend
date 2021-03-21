@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="user-friends">
     <item-friend
       v-for="friend in friends"
       :key="friend"
@@ -40,7 +40,8 @@ export default {
 </script>
 
 <style scoped>
-  p{
+  
+  p {
     color: black;
   }
 </style>
