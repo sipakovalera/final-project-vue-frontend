@@ -27,7 +27,7 @@
         <p class="errors">{{errors.fieldPassword}}</p>
       </div>
     </div>
-    <p v-if="!signIn">Error! Not valid login or password</p>
+    <p v-show="!signIn">Error! Not valid login or password</p>
     <div class="card-action">
       <div>
         <button 
@@ -63,16 +63,12 @@ export default {
     methods: {
       ...mapActions("auth", ["login"]),
       loginUser() {
-        this.login({
+         this.login({
           login: this.currentLogin,
           password: this.currentPassword
           })
-        try {
-          this.$router.push("/profile")
-        }
-        catch {
-          this.signIn = false
-        }
+          .then(() => this.$router.push("/profile"))
+          .catch(err => console.log(err), this.signIn = false );
       },
       validatePassword(value) {
         if(!value){

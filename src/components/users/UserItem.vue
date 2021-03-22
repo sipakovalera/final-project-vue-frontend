@@ -21,6 +21,7 @@
 
 <script>
 import { addFriend } from '../../services/api';
+import { mapGetters } from 'vuex';
 
 export default {
   props: {
@@ -35,12 +36,14 @@ export default {
       friendship: false
     }
   },
+   computed: {
+    ...mapGetters("auth", ["userId"])
+  },
   methods: {
     async addUser(id){
       try {
-        const currentUser = Number(localStorage.getItem('id'));
         this.friendship = true;
-        return await addFriend(currentUser, {userId: currentUser, friendId: id})
+        return await addFriend(this.userId, {userId: this.userId, friendId: id})
       }
       catch {
         console.log('error addUser')

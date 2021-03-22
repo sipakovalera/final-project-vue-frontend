@@ -44,50 +44,55 @@
           <p>Settings</p>
           <button @click="visibleDetails">{{ details ? "Hide" : "Change"}}</button>
           <div class="edit-user" v-show="details">
-            <div class="edit-name">
-              <label for="name">Name: 
-                <span>{{user.name}}</span>
-              </label>
-              <input 
-                type="text" 
-                placeholder="New name" 
-                v-model="newName"
-              />
-              <button 
-                class="edit" 
-                type="button" 
-                @click="updateName(user.id, newName)"
-              >Change</button>
-            </div>
-            <div class="edit-email">
-              <label for="name">Email: 
-                <span>{{user.login}}</span>
-              </label>
-              <input 
-                type="email" 
-                placeholder="New email" 
-                v-model="newLogin"
-              />
-              <button 
-                class="edit" 
-                type="button" 
-                @click="updateEmail(user.id, newLogin)"
-              >Change</button>
-              <p>Warning! Your email is login</p>
-            </div>
-            <div class="edit-password">
-              <label for="name">Password:</label>
-              <input 
-                type="password" 
-                placeholder="New password" 
-                v-model="newPassword"
-              />
-              <button 
-                class="edit" 
-                type="button" 
-                @click="updatedPassword(user.id, newPassword)"
-              >Change</button>
-            </div>
+            <form action="">
+              <div class="edit-name">
+                <label for="name">Name: 
+                  <span>{{user.name}}</span>
+                </label>
+                <input 
+                  type="text" 
+                  placeholder="New name" 
+                  autocomplete="username"
+                  v-model="newName"
+                />
+                <button 
+                  class="edit" 
+                  type="button" 
+                  @click="updateName(user.id, newName)"
+                >Change</button>
+              </div>
+              <div class="edit-email">
+                <label for="name">Email: 
+                  <span>{{user.login}}</span>
+                </label>
+                <input 
+                  type="email" 
+                  placeholder="New email" 
+                  autocomplete="email"
+                  v-model="newLogin"
+                />
+                <button 
+                  class="edit" 
+                  type="button" 
+                  @click="updateEmail(user.id, newLogin)"
+                >Change</button>
+                <p>Warning! Your email is login</p>
+              </div>
+              <div class="edit-password">
+                <label for="password">Password:</label>
+                <input 
+                  type="password" 
+                  autocomplete="new-password"
+                  placeholder="New password" 
+                  v-model="newPassword"
+                />
+                <button 
+                  class="edit" 
+                  type="button" 
+                  @click="updatedPassword(user.id, newPassword)"
+                >Change</button>
+              </div>
+            </form>
           </div>
           <div class="delete-container">
             <button id="delete-btn" @click="removeVisible">Delete account</button>
@@ -124,6 +129,7 @@ export default {
   },
   computed: {
     ...mapGetters("notes", ["details", "remove"]),
+     ...mapGetters("auth", ["userId"])
   },
   mounted() {
     this.createProfile()
@@ -132,11 +138,10 @@ export default {
     ...mapActions("notes", ["detailsVisible", "deleteVisible"]),
     ...mapActions("auth", ["logout"]),
     async createProfile(){
-      const currentProfile = Number(localStorage.getItem('id'));
       try {
-        const profile = await currentUser(currentProfile);
+        const profile = await currentUser(this.userId);
         this.user = profile.data;
-        const friends = await getFriends(currentProfile);
+        const friends = await getFriends(this.userId);
         this.friends = friends.data;
       }
       catch {
@@ -285,7 +290,7 @@ export default {
     font-size: 12px;
     color: #a92525;
     font-weight: 400;
-    text-align: start;
+    text-align: center;
   }
   .title-friends {
     width: 100%;

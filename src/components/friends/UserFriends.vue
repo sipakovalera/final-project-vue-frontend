@@ -30,8 +30,8 @@ export default {
   },
   "name": "user-friends",
   mounted() {
-    getFriend({friendId: this.friendId})
-    .then(response => {this.friends = response.data})
+    getFriend({ friendId: this.friendId })
+    .then(response => { this.friends = response.data })
       .catch(() => {
         console.log('Not found user')
     });

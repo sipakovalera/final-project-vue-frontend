@@ -93,7 +93,7 @@ export default {
   },
   methods: {
     ...mapActions("auth", ["register"]),
-    signup(){
+    signup() {
       this.register({
         name: this.newName,
         login: this.newLogin,
@@ -102,14 +102,14 @@ export default {
       .then(() => this.registration = true)
       .catch(err => console.log(err));
     },
-    firstLogin(){
+    firstLogin() {
       this.$router.push("/login")
     },
     isRequired(value) {
       if(!value){
         return "This field is required"
       }
-      if(value.length < 4){
+      if(value.length < 4) {
         return "This field is too short, add more than 4 symbols"
       } else return true
     },
@@ -123,13 +123,13 @@ export default {
       return true;
     },
     isCorrect(value) {
-      if(!value){
+      if(!value) {
         return "This field is required"
       }
-      if(value !== this.newPassword){
+      if(value !== this.newPassword) {
         return "Invalid password"
       } 
-      if(value.length < 8){
+      if(value.length < 8) {
         return "This field is too short, add more than 8 symbols"
       }else return true
     },

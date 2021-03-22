@@ -59,7 +59,7 @@ export default {
     this.getResults()
   },
   methods: {
-    async getResults(pageNumber){
+    async getResults(pageNumber) {
       try {
         this.currentPage = pageNumber;
         const result = await getUsers(this.currentPage, this.limit)
