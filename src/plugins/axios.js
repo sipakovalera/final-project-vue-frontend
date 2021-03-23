@@ -7,7 +7,7 @@ function setInterceptors(store) {
     function(config) {
       const token = store.state.auth.token;
       if(token){
-        axios.defaults.headers.common['Authorization'] = `Bearer ${token}`;  
+        config.headers.Authorization = `Bearer ${token}`;  
       }
       return config
     } 
