@@ -8,7 +8,7 @@
             <div class="picture item" v-if="user.avatar">
               <div class="avatar-active">
                 <img :src="`http://localhost:3000/upload/${user.avatar}`">
-                <span>X</span>
+                <span @click="removeAvatar(user.id, null)">X</span>
               </div>
             </div>
             <div class="upload-avatar" v-else>
@@ -160,7 +160,7 @@ export default {
         this.newName = data;
         alert(`You changed name: ${data}`)
         this.newName = "";
-        this.createProfile()
+        this.createProfile();
       } 
       catch {
         alert('This field is empty or less than 4 characters')
@@ -172,6 +172,7 @@ export default {
         await updateUser(id, {login: data}); 
         alert(`You changed login: ${data}`)
         this.newLogin = "";
+        this.createProfile();
       }
       catch {
         alert("This field must be a valid email")
@@ -182,9 +183,20 @@ export default {
         await updatePassword(id, {password: data});
         alert(`You changed password`)
         this.newPassword = "";
+        this.createProfile();
       }
       catch {
         alert("Invalid password! Field must be more than 4 characters ")
+      }
+    },
+    async removeAvatar(id, data) {
+      try {
+        await updateUser(id, {avatar: data});
+        alert(`You deleted avatar`);
+        this.createProfile();
+      }
+      catch {
+        alert("Error delete avatar")
       }
     },
     async updateFile(id, avatar) {
