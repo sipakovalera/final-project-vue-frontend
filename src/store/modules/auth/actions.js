@@ -12,7 +12,7 @@ export default {
       const id = await response.data.user.id;
       localStorage.setItem('token', token);
       localStorage.setItem('id', id); 
-      commit('login', token); 
+      commit('login', {token, id}); 
     }
   },
   logout({ commit }) {

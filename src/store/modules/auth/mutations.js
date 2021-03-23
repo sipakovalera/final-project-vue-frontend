@@ -3,8 +3,9 @@ export default {
     state.user = user
   
   },
-  login(state, token) {
-    state.token = token
+  login(state, {token, id}) {
+    state.token = token, 
+    state.user = id;
   },
   logout(state) {
     state.token = null,
