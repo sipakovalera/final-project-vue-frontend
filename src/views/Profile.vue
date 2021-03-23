@@ -109,9 +109,9 @@
 </template>
 
 <script>
-import { addAvatar, currentUser, updateUser, deleteUser, getFriends, updatePassword } from '../../services/api';
+import { addAvatar, currentUser, updateUser, deleteUser, getFriends, updatePassword } from '../services/api';
 import { mapActions, mapGetters } from 'vuex';
-import UserFriends from '../friends/UserFriends.vue'
+import UserFriends from '../components/friends/UserFriends'
 
 export default {
   components:{

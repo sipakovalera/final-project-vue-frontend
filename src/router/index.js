@@ -1,11 +1,4 @@
 import { createRouter, createWebHistory } from "vue-router";
-import Home from "../views/Home.vue";
-import NotFound from "../components/navigation/NotFound";
-import Login from "../components/auth/Login";
-import UsersList from "../components/users/UsersList";
-import Profile from "../components/profile/Profile";
-import Register from "../components/auth/Register";
-import NotesList from "../components/notes/NotesList";
 
 const routes = [
   {
@@ -16,39 +9,39 @@ const routes = [
     path: "/login",
     name: "login",
     meta: { publicAuth: true },
-    component: Login
+    component: () => import("@/views/Login")
   },
   {
     path: "/notes",
     name: "notesList",
     meta: { needsAuth: true },
-    component: NotesList
+    component: () => import("@/views/NotesList")
   },
   {
     path: "/users",
     name: "usersList",
     meta: { needsAuth: true },
-    component: UsersList
+    component: () => import("@/views/UsersList")
   },
   {
     path: "/profile",
     name: "profile",
     meta: { needsAuth: true },
-    component: Profile
+    component: () => import("@/views/Profile")
   },
   {
     path: "/home",
     name: "home",
     meta: { publicAuth: true },
-    component: Home
+    component: () => import("@/views/Home")
   },
   {
     path: "/register",
     name: "register",
     meta: { publicAuth: true },
-    component: Register
+    component: () => import("@/views/Register")
   },
-  { path: "/:notFound(.*)", component: NotFound }
+  { path: "/:notFound(.*)", component: () => import("@/views/NotFound") }
 ];
 
 const router = createRouter({

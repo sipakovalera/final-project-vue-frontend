@@ -3,13 +3,13 @@
     <nav>
       <ul>
         <li v-if="isLoggedIn">
-          <router-link to="/notes">Notes</router-link>
+         <router-link :to="{ name: 'notesList'}">Notes</router-link>
         </li>
         <li v-if="isLoggedIn">
-          <router-link to="/profile">Profile</router-link>
+          <router-link :to="{ name: 'profile'}">Profile</router-link>
         </li>
         <li v-if="isLoggedIn">
-          <router-link to="/users">Users</router-link>
+          <router-link :to="{ name: 'usersList'}">Users</router-link>
         </li>
         <li class="logout" v-if="isLoggedIn">
           <a @click="logoutUser">Logout</a>
@@ -18,7 +18,7 @@
           <router-link to="/">Home</router-link>
         </li>
         <li class="login" v-if="!isLoggedIn">
-          <router-link to="/login">Login</router-link>
+          <router-link :to="{ name: 'login'}">Login</router-link>
         </li>
       </ul>
     </nav>

@@ -5,8 +5,8 @@ export default {
     const response = await axios.post('/register', user)
     commit('register', response);
   },
-  async login({ commit }, { login, password }) {
-    const response = await axios.post('/login', { login, password })
+  async login({ commit }, data) {
+    const response = await axios.post('/login', data)
     if(response.data.token){
       const token = await response.data.token;
       const id = await response.data.user.id;

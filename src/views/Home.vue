@@ -1,15 +1,15 @@
 <template>
   <div class="home">
     <p>Social network</p>
-    <span>You, friends, family</span>
+    <span class="title-home">You, friends, family</span>
     <div class="join">
-      <router-link to="/register">Join us!</router-link>
+      <router-link :to="{ name: 'register'}">Join us!</router-link>
     </div>
   </div>
 </template>
 
 <style scoped>
-span {
+.title-home {
   font-weight: 600;
   font-size: 40px;
 }

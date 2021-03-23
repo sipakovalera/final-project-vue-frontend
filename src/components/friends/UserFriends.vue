@@ -13,8 +13,8 @@
 </template>
 
 <script>
-import { getFriend } from '../../services/api';
-import ItemFriend from './ItemFriend.vue';
+import { getFriend } from "../../services/api";
+import ItemFriend from "./ItemFriend";
 
 export default {
   components: {

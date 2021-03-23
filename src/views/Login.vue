@@ -35,7 +35,7 @@
         >Login</button>
       </div>
       <p class="center">
-        <router-link to="/register">
+        <router-link :to="{ name: 'register'}">
           Need an account? Sign up now!
         </router-link>
       </p>

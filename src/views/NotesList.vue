@@ -18,8 +18,8 @@
 </template>
 
 <script>
-import NoteItem from "./NoteItem.vue";
-import NoteCreate from "./NoteCreate.vue";
+import NoteItem from "../components/notes/NoteItem.vue";
+import NoteCreate from "../components/notes/NoteCreate.vue";
 import { mapGetters } from "vuex";
 
 export default {

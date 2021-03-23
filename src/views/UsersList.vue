@@ -33,9 +33,9 @@
 </template>
 
 <script>
-import UserItem from './UserItem.vue';
-import Pagination from './Pagination.vue';
-import { getUsers, sortUsers, selectAvatar } from '../../services/api';
+import UserItem from '../components/users/UserItem.vue';
+import Pagination from '../components/users/Pagination.vue';
+import { getUsers, sortUsers, selectAvatar } from '../services/api';
 
 export default {
   components: { 

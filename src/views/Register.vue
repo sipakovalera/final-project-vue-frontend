@@ -64,7 +64,7 @@
           </button>
         </div>
         <p class="center">
-          <router-link to="/login">
+          <router-link :to="{ name: 'login'}">
             If you're already a member, Login
           </router-link>
         </p>
